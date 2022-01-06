@@ -18,3 +18,12 @@ print(status_details)
 status_details.plot(kind='bar')
 
 plt.show()
+
+data['date'] = data['date'].astype('category').cat.codes
+data['domain'] = data['domain'].astype('category').cat.codes
+data["status"] = data["status"].astype("category").cat.codes
+data['status_details'] = data['status_details'].astype('category').cat.codes
+data['pages'] = data['pages'].astype('category').cat.codes
+dataCorr = data.corr()
+
+print(dataCorr)
